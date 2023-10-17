@@ -12,11 +12,16 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+//A anotação @RestController indica que esta classe é um controlador Spring MVC que lida com requisições REST.
+// Ele combina as anotações @Controller e @ResponseBody.
+//A anotação @RequestMapping("/modelos") especifica que as rotas (endpoints) relacionadas a este controlador começarão
+// com "/modelos".
 @RestController
 @RequestMapping("/modelos")
-@CrossOrigin(origins = "http://localhost:4200")
 public class ModeloController {
 
+    //As anotações @Autowired indicam injeção de dependências. O Spring irá injetar automaticamente instâncias
+    // de ModeloRepository e ModeloService quando uma instância de ModeloController for criada.
     @Autowired
     private ModeloRepository modeloRepository;
 

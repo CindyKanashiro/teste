@@ -6,6 +6,10 @@ import org.hibernate.sql.model.ModelMutationLogging;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+
+//DTOs são estruturas simples e frequentemente imutáveis que facilitam a transferência eficiente de dados entre diferentes
+// partes de uma aplicação ou entre sistemas distribuídos. Eles contribuem para um design mais flexível,
+// desacoplado e adaptável em cenários onde a transferência de dados é uma parte essencial da arquitetura.
 public class CarroDTO {
     private Long modeloID;
     private int ano;
@@ -13,12 +17,7 @@ public class CarroDTO {
     private int numPortas;
     private String cor;
 
-    public CarroDTO(Long modeloID, int ano, String combustivel, int numPortas, String cor) {
-        this.modeloID = modeloID;
-        this.ano = ano;
-        this.combustivel = combustivel;
-        this.numPortas = numPortas;
-        this.cor = cor;
+    public CarroDTO() {
     }
 
     public Long getModeloID() {

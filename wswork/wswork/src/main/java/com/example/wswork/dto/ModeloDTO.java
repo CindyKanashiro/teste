@@ -2,15 +2,16 @@ package com.example.wswork.dto;
 
 import java.math.BigDecimal;
 
+//DTOs são estruturas simples e frequentemente imutáveis que facilitam a transferência eficiente de dados entre diferentes
+// partes de uma aplicação ou entre sistemas distribuídos. Eles contribuem para um design mais flexível,
+// desacoplado e adaptável em cenários onde a transferência de dados é uma parte essencial da arquitetura.
 public class ModeloDTO {
     private Long marcaID;
     private String nome;
     private BigDecimal valorFipe;
 
-    public ModeloDTO(Long marcaID, String nome, BigDecimal valorFipe) {
-        this.marcaID = marcaID;
-        this.nome = nome;
-        this.valorFipe = valorFipe;
+    public ModeloDTO() {
+
     }
 
     public Long getMarcaID() {

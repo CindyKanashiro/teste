@@ -13,9 +13,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+//A anotação @RestController indica que esta classe é um controlador Spring MVC que lida com requisições REST.
+// Ele combina as anotações @Controller e @ResponseBody.
+//A anotação @RequestMapping("/carros") especifica que as rotas (endpoints) relacionadas a este controlador começarão com "/carros".
 @RestController
 @RequestMapping("/carros")
 public class CarroController {
+
+    //As anotações @Autowired indicam injeção de dependências. O Spring irá injetar automaticamente instâncias
+    // de CarroRepository e CarroService quando uma instância de CarroController for criada.
     @Autowired
     private CarroRepository carroRepository;
     @Autowired
@@ -86,4 +92,7 @@ public class CarroController {
                 "valor", carro.getModelo().getValorFipe()
         );
     }
+
+    //OBS: O uso da anotação @RequestBody indica que os dados da requisição (no corpo) devem ser convertidos para o objeto CarroDTO ou Carro.
+    // Isso é comum em operações POST e PUT, onde os dados são enviados no corpo da requisição.
 }
