@@ -16,7 +16,7 @@ public class Marca {
     public Marca() {
     }
 
-    // Construtor com todos os parâmetros
+
     public Marca(String nomeMarca) {
         this.nomeMarca = nomeMarca;
     }

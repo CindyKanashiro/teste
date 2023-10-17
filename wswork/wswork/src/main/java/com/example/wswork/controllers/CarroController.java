@@ -15,7 +15,6 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/carros")
-//@CrossOrigin(origins = "http://localhost:4200") // Defina o domínio do frontend
 public class CarroController {
     @Autowired
     private CarroRepository carroRepository;
@@ -39,7 +38,7 @@ public class CarroController {
     // Criar um novo carro
     @PostMapping
     public ResponseEntity<Carro> criarCarro(@RequestBody CarroDTO carrodto) {
-        Carro novoCarro = carroService.criarCarro(carrodto);
+        Carro novoCarro = carroService.criarCarro(carrodto, carrodto.getModeloID());
         return ResponseEntity.status(HttpStatus.CREATED).body(novoCarro);
     }
 
@@ -47,8 +46,14 @@ public class CarroController {
     @PutMapping("/{id}")
     public ResponseEntity<Carro> atualizarCarro(@PathVariable Long id, @RequestBody Carro carro) {
         Carro carroAtualizado = carroService.atualizarCarro(id, carro);
-        return ResponseEntity.ok(carroAtualizado);
+
+        if (carroAtualizado != null) {
+            return ResponseEntity.ok(carroAtualizado);
+        } else {
+            return ResponseEntity.notFound().build(); // Retorna o status HTTP 404 NOT FOUND
+        }
     }
+
 
     // Excluir um carro por ID
     @DeleteMapping("/{id}")
@@ -57,6 +62,7 @@ public class CarroController {
         return ResponseEntity.noContent().build();
     }
 
+    // Lista formatada desejada no teste
     @GetMapping("/listagem-formatada")
     public ResponseEntity<List<Object>> getCarrosFormatados() {
         List<Object> carrosFormatados = carroRepository.findAll().stream()

@@ -1,83 +1,63 @@
 package com.example.wswork.dto;
 
+import com.example.wswork.model.Modelo;
 import jakarta.persistence.Entity;
+import org.hibernate.sql.model.ModelMutationLogging;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 public class CarroDTO {
-        private String marcaNome;
-        private String modeloNome;
-        private BigDecimal valorFipe;
-        private Timestamp timestampCadastro;
-        private int ano;
-        private String combustivel;
-        private int numPortas;
-        private String cor;
+    private Long modeloID;
+    private int ano;
+    private String combustivel;
+    private int numPortas;
+    private String cor;
 
-        // getters e setters
+    public CarroDTO(Long modeloID, int ano, String combustivel, int numPortas, String cor) {
+        this.modeloID = modeloID;
+        this.ano = ano;
+        this.combustivel = combustivel;
+        this.numPortas = numPortas;
+        this.cor = cor;
+    }
 
-        public String getMarcaNome() {
-            return marcaNome;
-        }
+    public Long getModeloID() {
+        return modeloID;
+    }
 
-        public void setMarcaNome(String marcaNome) {
-            this.marcaNome = marcaNome;
-        }
+    public void setModeloID(Long modeloID) {
+        this.modeloID = modeloID;
+    }
 
-        public String getModeloNome() {
-            return modeloNome;
-        }
+    public int getAno() {
+        return ano;
+    }
 
-        public void setModeloNome(String modeloNome) {
-            this.modeloNome = modeloNome;
-        }
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
 
-        public BigDecimal getValorFipe() {
-            return valorFipe;
-        }
+    public String getCombustivel() {
+        return combustivel;
+    }
 
-        public void setValorFipe(BigDecimal valorFipe) {
-            this.valorFipe = valorFipe;
-        }
+    public void setCombustivel(String combustivel) {
+        this.combustivel = combustivel;
+    }
 
-        public Timestamp getTimestampCadastro() {
-            return timestampCadastro;
-        }
+    public int getNumPortas() {
+        return numPortas;
+    }
 
-        public void setTimestampCadastro(Timestamp timestampCadastro) {
-            this.timestampCadastro = timestampCadastro;
-        }
+    public void setNumPortas(int numPortas) {
+        this.numPortas = numPortas;
+    }
 
-        public int getAno() {
-            return ano;
-        }
+    public String getCor() {
+        return cor;
+    }
 
-        public void setAno(int ano) {
-            this.ano = ano;
-        }
-
-        public String getCombustivel() {
-            return combustivel;
-        }
-
-        public void setCombustivel(String combustivel) {
-            this.combustivel = combustivel;
-        }
-
-        public int getNumPortas() {
-            return numPortas;
-        }
-
-        public void setNumPortas(int numPortas) {
-            this.numPortas = numPortas;
-        }
-
-        public String getCor() {
-            return cor;
-        }
-
-        public void setCor(String cor) {
-            this.cor = cor;
-        }
-
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
 }

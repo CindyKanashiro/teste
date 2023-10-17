@@ -24,7 +24,6 @@ public class Modelo {
     public Modelo() {
     }
 
-    // Construtor com todos os parâmetros
     public Modelo(Marca marca, String nome, BigDecimal valorFipe) {
         this.marca = marca;
         this.nome = nome;

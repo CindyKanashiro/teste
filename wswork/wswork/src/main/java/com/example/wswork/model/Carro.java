@@ -27,7 +27,6 @@ public class Carro {
     public Carro() {
     }
 
-    // Construtor com todos os parâmetros
     public Carro(Timestamp timestampCadastro, Modelo modelo, int ano, String combustivel, int numPortas, String cor) {
         this.modelo = modelo;
         this.timestampCadastro = timestampCadastro;
